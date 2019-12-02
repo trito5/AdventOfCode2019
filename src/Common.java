@@ -38,6 +38,16 @@ public class Common {
         return inputs;
     }
 
+    public String readLine(String fileName) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            return br.readLine();
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+            return null;
+        }
+    }
+
     public int getSumOfList(List<Integer> inputs){
         int result = 0;
         for (int number : inputs) {
