@@ -5,7 +5,7 @@ fun main(args: Array<String>) {
     val modules = File(fileName).readLines().map(String::toInt)
     var totalFuel = 0;
     modules.forEach{
-        totalFuel += it/3 - 2
+        totalFuel += it / 3 - 2
     }
     println(totalFuel)
 }
