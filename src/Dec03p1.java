@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Dec03p1 {
 
@@ -24,10 +21,6 @@ public class Dec03p1 {
                 if (pos1Nodes.get(i).length != 0 && pos1Nodes.get(i).length  <= shortestDistance)
                         shortestDistance = pos1Nodes.get(i).length;
             }
-        }
-        System.out.println("*********************");
-        for (Node node : pos2NodesHash) {
-            System.out.println(node.toString());
         }
         System.out.println("Shortest distance: " + shortestDistance);
 

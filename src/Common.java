@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Common {
@@ -54,5 +55,31 @@ public class Common {
             result += number;
         }
         return result;
+    }
+
+    public List<String> readLineAndSplitOnCharToStringList(String fileName, String splitter) {
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            String line = br.readLine();
+            return Arrays.asList(line.split(splitter));
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+            return null;
+        }
+    }
+    public List<Integer> readLineAndSplitOnCharToIntList(String fileName, String splitter) {
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            String line = br.readLine();
+            List<String> tempList = Arrays.asList(line.split(splitter));
+            List<Integer> inputs = new ArrayList<>();
+            for (String temp : tempList) {
+                inputs.add(Integer.parseInt(temp));
+            }
+            return inputs;
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+            return null;
+        }
     }
 }

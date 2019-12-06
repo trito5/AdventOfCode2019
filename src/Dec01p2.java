@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Dec01p2 {
     public static void main(String[] args) {
-        String fileName = "textFiles/Dec01.txt";
+        String fileName = "textFiles/dec01.txt";
         Common common = new Common();
         List<Integer> inputs = common.readIntFile(fileName);
         int totalFuelMass = 0;
@@ -19,7 +19,7 @@ public class Dec01p2 {
         if (mass <= 0) {
             return total;
         } else {
-            int newMass = (int) Math.floor(mass/3) - 2;
+            int newMass = mass/3 - 2;
             if (newMass >= 0) {
                 total += newMass;
             }
