@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class IntComputer {
@@ -31,8 +30,43 @@ public class IntComputer {
                     index += 2;
                     break;
                 case 4:
-                    System.out.println(inputs.get(inputs.get(index + 1)));
+                    System.out.println(getValue(inputs, opCodesCDE.get(0),(index + 1)));
                     index += 2;
+                    break;
+                case 5:
+                    int valueC5 = getValue(inputs, opCodesCDE.get(0), index + 1);
+                    if(valueC5 != 0) {
+                        index = getValue(inputs, opCodesCDE.get(1), index + 2);
+                    } else {
+                        index += 3;
+                    }
+                    break;
+                case 6:
+                    int valueC6 = getValue(inputs, opCodesCDE.get(0), index + 1);
+                    if(valueC6 == 0) {
+                        index = getValue(inputs, opCodesCDE.get(1), index + 2);
+                    } else {
+                        index += 3;
+                    }
+                    break;
+                case 7:
+                    int valueC7 = 0;
+                    if(getValue(inputs, opCodesCDE.get(0), index + 1) < getValue(inputs, opCodesCDE.get(1), index + 2)) {
+                        valueC7 = 1;
+                    }
+                    inputs.set(inputs.get(index + 3), valueC7);
+                    index += 4;
+                    break;
+                case 8:
+                    int valueC8 = 0;
+                    if(getValue(inputs, opCodesCDE.get(0), index + 1) == getValue(inputs, opCodesCDE.get(1), index + 2))  {
+                        valueC8 = 1;
+                    }
+                    inputs.set(inputs.get(index + 3), valueC8);
+                    index += 4;
+                    break;
+                default:
+                    System.out.println("Something went wrong in the switch " + opCodeAB);
                     break;
             }
         }
