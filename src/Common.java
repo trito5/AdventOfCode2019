@@ -38,6 +38,21 @@ public class Common {
         }
         return inputs;
     }
+    public List<Integer> readIntFileAndSeparateRowInSignleInts(String fileName) {
+        List<Integer> inputs = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            String line = br.readLine();
+            for (int i = 0; i < line.length(); i ++) {
+                int digit = Integer.parseInt(String.valueOf(line.charAt(i)));
+                inputs.add(digit);
+            }
+
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+        }
+        return inputs;
+    }
 
     public String readLine(String fileName) {
         try {
@@ -82,4 +97,5 @@ public class Common {
             return null;
         }
     }
+
 }

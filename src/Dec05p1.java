@@ -6,6 +6,10 @@ public class Dec05p1 {
         Common common = new Common();
         List<Integer> inputs = common.readLineAndSplitOnCharToIntList(fileName, ",");
         IntComputer intComputer = new IntComputer();
-        intComputer.run(inputs, 1);
+        List<Integer> outputs = intComputer.run(inputs, List.of(1));
+
+        for (int number : outputs) {
+            System.out.println(number);
+        }
     }
 }

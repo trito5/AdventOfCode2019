@@ -1,10 +1,14 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class IntComputer {
     private int index = 0;
+    private int indexInSystemInputs = 0;
+    private List<Integer> outputs = new ArrayList<>();
 
-    public void run(List<Integer> inputs, int startInput) {
+    public List<Integer> run(List<Integer> inputs, List<Integer> sytemInputs) {
         while (true) {
             int opCode = inputs.get(index);
             int opCodeAB = opCode % 100;
@@ -26,11 +30,12 @@ public class IntComputer {
                     index += 4;
                     break;
                 case 3:
-                    inputs.set(inputs.get(index + 1), startInput);
+                    inputs.set(inputs.get(index + 1), sytemInputs.get(indexInSystemInputs));
+                    indexInSystemInputs ++;
                     index += 2;
                     break;
                 case 4:
-                    System.out.println(getValue(inputs, opCodesCDE.get(0),(index + 1)));
+                    outputs.add(getValue(inputs, opCodesCDE.get(0),(index + 1)));
                     index += 2;
                     break;
                 case 5:
@@ -70,6 +75,7 @@ public class IntComputer {
                     break;
             }
         }
+        return outputs;
     }
 
     private int getValue(List<Integer> inputs, int mode, int index) {
