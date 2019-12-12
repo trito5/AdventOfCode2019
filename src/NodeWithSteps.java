@@ -5,6 +5,4 @@ public class NodeWithSteps extends Node{
         super(x, y);
         this.steps = steps;
     }
-
-
 }

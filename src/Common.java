@@ -97,5 +97,20 @@ public class Common {
             return null;
         }
     }
+    public List<Long> readLineAndSplitOnCharToLongList(String fileName, String splitter) {
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            String line = br.readLine();
+            List<String> tempList = Arrays.asList(line.split(splitter));
+            List<Long> inputs = new ArrayList<>();
+            for (String temp : tempList) {
+                inputs.add(Long.parseLong(temp));
+            }
+            return inputs;
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+            return null;
+        }
+    }
 
 }

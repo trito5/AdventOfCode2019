@@ -22,7 +22,6 @@ public class Dec08p2 {
             } else {
                 System.out.print(outputMessage.get(i));
             }
-
         }
     }
 

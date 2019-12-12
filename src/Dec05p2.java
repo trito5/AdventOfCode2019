@@ -1,3 +1,4 @@
+/*
 import java.util.List;
 
 public class Dec05p2 {
@@ -12,3 +13,4 @@ public class Dec05p2 {
         }
     }
 }
+*/
