@@ -8,10 +8,24 @@ public class Moon {
     public int yV;
     public int zV;
 
+    public final int startX;
+    public final int startY;
+    public final int startZ;
+
+    public final int startXV;
+    public final int startYV;
+    public final int startZV;
+
     public Moon(int x, int y, int z) {
         this.x = x;
         this.y = y;
         this.z = z;
+        this.startX = x;
+        this.startY = y;
+        this.startZ = z;
+        this.startXV = 0;
+        this.startYV = 0;
+        this.startZV = 0;
     }
 
     public void calculateVelocity(Moon neighbour) {
