@@ -16,7 +16,7 @@ public class IntComputer {
             inputQeue.add(input);
         while (true) {
             int opCode = inputs.get(index).intValue();
-            System.out.println(opCode);
+
             int opCodeAB = opCode % 100;
             if (opCodeAB == 99) {
                 breakPointReached = true;
@@ -54,10 +54,9 @@ public class IntComputer {
                     long valueC5 = getValue(inputs, opCodesCDE.get(0), index + 1);
                     if(valueC5 != 0) {
                         index = (int) getValue(inputs, opCodesCDE.get(1), index + 2);
-                        System.out.println("index : " + index + " value new index: " + inputs.get(index));
                     } else {
                         index += 3;
-                        System.out.println("nähe vi kom hit");
+
                     }
                     break;
                 case 6:
@@ -102,8 +101,8 @@ public class IntComputer {
             }
         }
 
-        //return outputs;
-       return inputQeue;
+        return outputs;
+       //return inputQeue;
     }
 
     private long getValue(List<Long> inputs, int mode, int index) {
